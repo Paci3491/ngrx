@@ -15,4 +15,10 @@ export class AuthService {
       debounceTime(1000)
     )
   }
+
+  logout() {
+    return of(null).pipe(
+      debounceTime(1000)
+    )
+  }
 }

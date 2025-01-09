@@ -6,9 +6,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import {authReducer} from './features/auth/reducers';
+import {provideEffects} from '@ngrx/effects';
+import {AuthEffects} from './features/auth/auth.effects';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimationsAsync(),
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideAnimationsAsync(),
+    provideEffects([AuthEffects]),
     provideStore({auth: authReducer}),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })]
 };

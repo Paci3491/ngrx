@@ -6,3 +6,6 @@ export const login = createAction(
   props<{name: string}>()
 )
 
+export const logout = createAction(
+  "[Login Page] User Logout",
+)
