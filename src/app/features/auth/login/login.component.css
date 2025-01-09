@@ -1,0 +1,12 @@
+.login-wrapper {
+  /*width: 500px;*/
+  display: flex;
+  justify-content: center;
+}
+
+.md-card {
+  border: 1px solid gray;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-top: 50px;
+}

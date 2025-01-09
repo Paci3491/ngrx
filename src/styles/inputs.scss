@@ -1,0 +1,46 @@
+@import './base-variables';
+
+label[required]::after {
+  content:' *';
+  color: red;
+}
+
+.input-field {
+  width: 15rem;
+  label {
+    display: block;
+    margin-left: .2rem;
+  }
+  input, select, textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: .625rem 1rem ;
+    border: 1px solid $border-gray;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 5px;
+    margin-bottom: 1.22rem; // Placeholder for error spans
+    &:focus {
+      border: 1px solid $color-primary;
+      box-shadow: 0 0 0 1px $color-primary;
+    }
+    &:focus-visible {
+      outline: none;
+    }
+    &.ng-invalid.ng-dirty {
+      border-left: 5px solid red;
+      margin-bottom: 0; // Leaves space for error span
+    }
+  }
+}
+
+.input-field-err {
+  display: block;
+  font-size: 13px;
+  color: red;
+}
+
+textarea {
+  resize: none;
+}

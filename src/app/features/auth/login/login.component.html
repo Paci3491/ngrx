@@ -1,0 +1,29 @@
+<h2>provided name: {{storeName$ | async}}</h2>
+
+
+<div class=" login-wrapper">
+  <div class="md-card">
+    <h3>Oida Login</h3>
+
+    <mat-form-field appearance="outline">
+      <mat-label>name</mat-label>
+      <input [(ngModel)]="name" matInput>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="outline">
+      <mat-label>pass</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <br>
+
+    <button mat-raised-button (click)="login()">Login</button>
+  </div>
+
+
+</div>
+
+
+

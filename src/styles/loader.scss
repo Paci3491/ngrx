@@ -1,0 +1,53 @@
+.md-progress-bar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+
+  .md-progress-bar {
+    height: 4px;
+    background-image: linear-gradient(90deg, rgba(255,94,0,1) 0%, rgba(220,38,38,1) 100%);
+    background-size: 100%;
+    animation: 4s linear infinite progress-bar;
+  }
+}
+
+.spinner-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-border.small {
+  height: 18px;
+  width: 18px;
+}
+
+.spinner-border.large {
+  height: 50px;
+  width: 50px;
+}
+
+@keyframes progress-bar {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(100%);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

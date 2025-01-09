@@ -1,0 +1,75 @@
+@use './base-variables' as vars;
+
+.button {
+  text-decoration: none;
+  border-radius: .375rem;
+  cursor: pointer;
+  &:disabled {
+    border: 2px solid vars.$button-disabled-gray-background;
+    background-color: vars.$button-disabled-gray-background;
+    color: vars.$button-disabled-gray-color;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.button.large {
+  padding: .625rem 1.25rem;
+  font-size: 14px;
+}
+
+.button.medium {
+  padding: .5rem 1rem;
+  font-size: 13px;
+}
+
+.button.small {
+  padding: .4rem .8rem;
+  font-size: 13px;
+}
+
+.button.primary:not(:disabled) {
+  border: 2px solid vars.$color-primary;
+  background: vars.$color-primary;
+  color: white;
+  &:hover {
+    transition: .3s;
+    border: 2px solid vars.$color-primary-hover;
+    background: vars.$color-primary-hover;
+  }
+}
+
+.button.secondary:not(:disabled) {
+  border: 2px solid transparent;
+  background: transparent;
+  color: vars.$color-primary;
+  &:hover {
+    transition-duration: .3s;
+    background: rgba(239, 68, 68, 0.1);
+  }
+}
+
+.button.outline:not(:disabled) {
+  border: 2px solid vars.$color-primary;
+  background: transparent;
+  color: vars.$color-primary;
+  &:hover {
+    transition: .3s;
+    color: white;
+    background: vars.$color-primary;
+  }
+}
+
+.link {
+  color: vars.$color-primary;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.link.underlined {
+  text-decoration: underline;
+}
