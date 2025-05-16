@@ -1,0 +1,16 @@
+<mat-toolbar class="d-flex justify-content-between align-items-center">
+
+  <div>
+    <span>NGRX Sandbox</span>
+    <span class="example-spacer"></span>
+  </div>
+
+  <div>
+    <span *ngIf="userNickName$ | async" class="label">{{ userNickName$ | async }}</span>
+
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+
+</mat-toolbar>
