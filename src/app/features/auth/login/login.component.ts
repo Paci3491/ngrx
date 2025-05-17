@@ -7,20 +7,12 @@ import { AuthService } from '../../../services/auth.service';
 import { Observable, tap } from 'rxjs';
 import { login } from '../auth.actions';
 import { FormsModule } from '@angular/forms';
-import { AsyncPipe } from '@angular/common';
 import { getUserNickName } from '../auth.selectors';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [
-    MatButton,
-    MatFormField,
-    MatInput,
-    MatLabel,
-    FormsModule,
-    AsyncPipe,
-  ],
+  imports: [MatButton, MatFormField, MatInput, MatLabel, FormsModule],
   providers: [],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',

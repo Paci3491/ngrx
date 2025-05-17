@@ -4,7 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatIconButton } from '@angular/material/button';
 import { Observable, tap } from 'rxjs';
 import { select, Store } from '@ngrx/store';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { logout } from '../auth/auth.actions';
 import { getUserNickName } from '../auth/auth.selectors';
@@ -12,7 +12,7 @@ import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [MatToolbar, MatIcon, MatIconButton, AsyncPipe, NgIf],
+  imports: [MatToolbar, MatIcon, MatIconButton, AsyncPipe, NgIf, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

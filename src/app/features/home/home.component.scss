@@ -1,0 +1,26 @@
+.home-wrapper {
+  display: flex;
+  padding: 3rem;
+}
+
+.tile {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  border: 1px solid #9e9e9e;
+  background: #c0c9f8;
+  border-radius: 16px;
+  height: 15rem;
+  margin: 10px 15px;
+  &:hover {
+    background: #a2ace6;
+    cursor: pointer;
+  }
+
+  .tile-title {
+    font-size: 35px;
+    color: #505050;
+  }
+}
