@@ -1,0 +1,9 @@
+<div class="md-card">
+  <mat-list role="list">
+    @for (item of itemList; track item.name) {
+      <mat-list-item role="listitem">{{item.name}}</mat-list-item>
+    }
+  </mat-list>
+
+  <button mat-flat-button class="w-100" (click)="pushItemToItemList()">Push to item array</button>
+</div>
