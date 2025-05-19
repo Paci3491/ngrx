@@ -34,10 +34,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-items: center;
 }
 
+.md-card {
+  border: 1px solid #dbdbdb;
+  box-shadow: 0px 10px 33px -21px black;
+  padding: 2rem;
+  border-radius: 9px;
+}
+
 .label {
-  border-radius: 20px;
+  border-radius: 15px;
   background: #c8e0ff;
-  padding: 5px 10px;
+  padding: 0px 6px;
 }
 
 .mt-1 {
@@ -74,6 +81,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .w-100 {
   width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-25 {
+  width: 25%;
 }
 
 .h-100 {

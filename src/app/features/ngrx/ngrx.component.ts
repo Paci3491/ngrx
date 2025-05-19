@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { CoursesComponent } from './courses/courses.component';
 
 @Component({
   selector: 'app-ngrx',
-  imports: [],
+  imports: [CoursesComponent],
   templateUrl: './ngrx.component.html',
   styleUrl: './ngrx.component.scss',
 })

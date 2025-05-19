@@ -3,6 +3,17 @@
   padding: 3rem;
 }
 
+.label {
+  font-size: 15px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  color: #3a3a3a;
+  mat-icon {
+    color: #737373;
+  }
+}
+
 .tile {
   text-decoration: none;
   display: flex;
@@ -14,13 +25,24 @@
   border-radius: 16px;
   height: 15rem;
   margin: 10px 15px;
+  transform: translateY(5px);
+  box-shadow: 0 6px 22px -15px black;
+  color: #505050;
+  transition: transform .2s ease, box-shadow .3s ease, color .3s ease;
+
   &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 36px -12px black;
+    color: #ffffff;
+    transition: transform .3s ease, box-shadow .3s ease, color .3s ease;
     background: #a2ace6;
     cursor: pointer;
   }
 
   .tile-title {
+    text-align: center;
     font-size: 35px;
-    color: #505050;
+    color: inherit;
   }
 }
+
