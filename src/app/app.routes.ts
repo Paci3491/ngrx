@@ -4,6 +4,7 @@ import { HomeComponent } from './features/home/home.component';
 import { NgrxComponent } from './features/ngrx/ngrx.component';
 import { CoursesResolver } from './features/ngrx/courses/courses.resolver';
 import { ChangeDetectionComponent } from './features/change-detection/change-detection.component';
+import { DependencyInjectionComponent } from './features/dependency-injection/dependency-injection.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -13,6 +14,11 @@ export const routes: Routes = [
     path: 'change-detection',
     component: ChangeDetectionComponent,
     title: 'Change Detection',
+  },
+  {
+    path: 'dependency-injection',
+    component: DependencyInjectionComponent,
+    title: 'Dependency Injection',
   },
   {
     path: 'ngrx',
