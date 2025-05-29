@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Course } from '../../../services/database';
+import { Course } from './courses.models';
 
 export const loadAllCourses = createAction(
   '[Course Resolver] Load All Courses',

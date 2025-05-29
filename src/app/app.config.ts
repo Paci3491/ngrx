@@ -17,6 +17,7 @@ import {
   routerReducer,
   RouterState,
 } from '@ngrx/router-store';
+import { coursesReducer } from './features/ngrx/courses/course.reducers';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,6 +28,7 @@ export const appConfig: ApplicationConfig = {
     provideStore(
       {
         auth: authReducer,
+        courses: coursesReducer,
         router: routerReducer,
       },
       {
@@ -38,7 +40,7 @@ export const appConfig: ApplicationConfig = {
         },
         metaReducers: metaReducers,
       },
-    ), //{ metaReducers }
+    ),
     provideRouterStore({
       stateKey: 'router',
       routerState: RouterState.Minimal,
