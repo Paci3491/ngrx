@@ -23,12 +23,10 @@ export class DetectionListComponent {
     { name: 'Awesome Item 3' },
   ];
 
-  ngOnInit() {}
-
   pushItemToItemList() {
     this.itemList.push({ name: 'Awesome Item 4' });
     setTimeout(() => {
-      this.itemList.push({ name: 'Awesome Item 5' });
+      this.itemList.push({ name: 'Awesome Item From Timeout' });
       this.cdr.markForCheck();
     }, 1000);
   }
