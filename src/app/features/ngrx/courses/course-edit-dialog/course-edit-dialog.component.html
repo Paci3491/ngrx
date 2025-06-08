@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Edit Course</h2>
+
+<mat-dialog-content class="mat-typography">
+
+  <div class="body">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input [(ngModel)]="name" matInput>
+    </mat-form-field>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="onSave()">Save</button>
+</mat-dialog-actions>
