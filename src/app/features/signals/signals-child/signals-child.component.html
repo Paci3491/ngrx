@@ -1,23 +1,22 @@
-
-
-
 <div class="page-wrapper">
 
   <div class="md-card sidebar">
     <ol>
       <li>Trigger updates automatically when that value changes</li>
       <li>Basic signals have <b>.set()</b> and <b>.update()</b> methods</li>
-      <li>Computed is mostly used to store result of a function or in case two or more signals need to interact with each other</li>
+      <li><b>computed()</b> is mostly used to store result of a function or in case two or more signals need to interact with each other</li>
       <li><b>effect()</b> runs some side-effecting code (logging, HTTP, updating DOM, etc.) when one or more signals change.
-      The value must be used in the effect function.</li>
+      The signal must be used in the effect function.</li>
     </ol>
 
     <div class="mb-2"><b>But why not just RXJS?</b></div>
     <div class="mb-2">Rxjs serves two purposes in Angular</div>
     <ol>
-      <li>Coordinate complex and handling complex async data flows</li>
+      <li>Coordinate and handling complex async data flows</li>
       <li>Basic reactive building block <b><- this is meant to be replaced</b></li>
     </ol>
+    <div class="mb-2">For basic component reactivity signals are simpler.</div> <div>For instance the example of multiplying of two values in signals
+    is way easier and cleaner than doing that with two Behavior Subjects</div>
   </div>
 
 
@@ -26,11 +25,12 @@
       <h4 class="m-0">Signal counter: {{counter()}} </h4>
       <h4 *ngIf="showEffectFired()" class="m-0">effect() fired</h4>
     </div>
+
     <h4>Signal counter doubled: {{doubledCounter()}}</h4>
 
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Action</mat-label>
-      <textarea [ngModel]="actions().join('\n')" matInput></textarea>
+      <textarea rows="4" [ngModel]="actions().join('\n')" matInput readonly></textarea>
     </mat-form-field>
 
 
@@ -42,5 +42,7 @@
     <hr class="mt-4">
 
     <h4>Inputs & Outputs</h4>
+    <div>Async input: {{signalInput()}}</div>
+
   </div>
 </div>

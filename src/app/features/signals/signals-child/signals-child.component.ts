@@ -3,6 +3,8 @@ import {
   Component,
   computed,
   effect,
+  input,
+  output,
   signal,
 } from '@angular/core';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
@@ -27,7 +29,9 @@ import { NgIf } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignalsChildComponent {
-  // signalInput = (input
+  signalInput = input<string>();
+  signalOutput = output();
+
   counter = signal(0);
   actions = signal<string[]>(['Initial']);
   showEffectFired = signal(false);
@@ -36,6 +40,7 @@ export class SignalsChildComponent {
   constructor() {
     effect(() => {
       console.log(this.counter());
+      console.log(this.signalInput());
       this.showEffectFired.set(true);
 
       setTimeout(() => {

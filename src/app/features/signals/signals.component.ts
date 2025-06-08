@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { SignalsChildComponent } from './signals-child/signals-child.component';
 import { HomeButtonComponent } from '../../shared/home-button/home-button.component';
 
@@ -9,4 +15,15 @@ import { HomeButtonComponent } from '../../shared/home-button/home-button.compon
   styleUrl: './signals.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SignalsComponent {}
+export class SignalsComponent implements OnInit {
+  private cdr = inject(ChangeDetectorRef);
+
+  asyncInput: string = 'lol';
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.asyncInput = 'This is async signal Input ';
+      this.cdr.markForCheck();
+    }, 1000);
+  }
+}
