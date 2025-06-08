@@ -15,6 +15,8 @@ import {
   MatTable,
   MatTableDataSource,
 } from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
+import { MatTab, MatTabGroup } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-courses',
@@ -29,6 +31,9 @@ import {
     MatRowDef,
     MatHeaderRow,
     MatRow,
+    FormsModule,
+    MatTabGroup,
+    MatTab,
   ],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss',
