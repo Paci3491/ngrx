@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './features/auth/login/login.component';
+import { LoginComponent } from './features/ngrx/auth/login/login.component';
 import { HomeComponent } from './features/home/home.component';
 import { NgrxComponent } from './features/ngrx/ngrx.component';
 import { CoursesResolver } from './features/ngrx/courses/courses.resolver';

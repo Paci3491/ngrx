@@ -3,7 +3,7 @@ import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { select, Store } from '@ngrx/store';
-import { AuthService } from '../../../services/auth.service';
+import { AuthService } from '../../../../services/auth.service';
 import { Observable, tap } from 'rxjs';
 import { login } from '../auth.actions';
 import { FormsModule } from '@angular/forms';

@@ -6,8 +6,8 @@ import { Observable, tap } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { logout } from '../auth/auth.actions';
-import { getUserNickName } from '../auth/auth.selectors';
+import { logout } from '../ngrx/auth/auth.actions';
+import { getUserNickName } from '../ngrx/auth/auth.selectors';
 import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({

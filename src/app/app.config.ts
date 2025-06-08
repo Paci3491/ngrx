@@ -9,9 +9,9 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { authReducer, metaReducers } from './features/auth/reducers';
+import { authReducer, metaReducers } from './features/ngrx/auth/reducers';
 import { provideEffects } from '@ngrx/effects';
-import { AuthEffects } from './features/auth/auth.effects';
+import { AuthEffects } from './features/ngrx/auth/auth.effects';
 import {
   provideRouterStore,
   routerReducer,
