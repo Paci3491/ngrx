@@ -1,21 +1,4 @@
-
-.page-wrapper {
-  display: flex;
-  justify-content: center;
-  padding-top: 40px;
-  gap: 20px;
-}
-
-.sidebar {
-  width: 30rem;
-  ol > li {
-    margin-bottom: 0.5rem;
-  }
-}
-
 .playground {
-  width: 30rem;
-
   button {
     margin-right: 4px;
   }

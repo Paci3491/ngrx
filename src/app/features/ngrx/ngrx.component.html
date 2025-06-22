@@ -1,3 +1,31 @@
 <app-home-button></app-home-button>
 
-<app-courses></app-courses>
+<div class="page-wrapper">
+
+  <div class="md-card sidebar">
+    <mat-tab-group>
+      <mat-tab label="Actions">
+        <div>Each action typically has:</div>
+        <ul>
+          <li>A type - <code>createAction('[Course API] Load Courses Success')</code></li>
+          <li>Optional payload - <pre><code>props<&#123; courses: Course[] &#125;>()</code></pre></li>
+        </ul>
+        <div><b>Reducers listen</b> for them to update state.</div>
+
+
+      </mat-tab>
+      <mat-tab label="Reducers">
+        Zdokumentovat adapter
+      </mat-tab>
+      <mat-tab label="Selectors">  </mat-tab>
+      <mat-tab label="Effects">
+        <div>An Effect is <b>used to handle side effects</b> in an especially async tasks <b>like API calls</b>.</div>
+        <div>After reducer has succeeded and updated the store, the effect is fired with the API call</div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <div class="md-card playground">
+    <app-courses></app-courses>
+  </div>
+</div>
