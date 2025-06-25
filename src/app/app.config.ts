@@ -18,13 +18,14 @@ import {
   RouterState,
 } from '@ngrx/router-store';
 import { coursesReducer } from './features/ngrx/courses/course.reducers';
+import { provideEntityData } from '@ngrx/data';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimationsAsync(),
-    // provideEntityData({}),
+    provideEntityData({}), // comment if entity ngrx
     provideEffects([AuthEffects]),
     provideStore(
       {
