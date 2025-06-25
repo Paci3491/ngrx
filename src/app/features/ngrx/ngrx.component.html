@@ -31,10 +31,10 @@
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
         </table>
-
       </mat-tab>
 
-      <mat-tab label="Actions">
+      <mat-tab label="Ngrx Entity">
+        <h3>Actions</h3>
         <div>Each action typically has:</div>
         <ul>
           <li>A type - <code>createAction('[Course API] Load Courses Success')</code></li>
@@ -43,9 +43,8 @@
           </li>
         </ul>
         <div><b>Reducers listen</b> for them to update state.</div>
-      </mat-tab>
 
-      <mat-tab label="Reducers">
+        <h3>Reducers</h3>
         <p>Reducers <b>are always called</b> after the action is dispatched.</p>
         <p>NgRx Entity Adapter helps manage collections of entities in your store in a <b>normalized</b> and efficient way.</p>
         <p>Normalizes data into:</p>
@@ -65,16 +64,22 @@
           <b>addOne()</b>, <b>addMany()</b>, <b>updateOne()</b>, <b>removeOne()</b>, <b>removeAll()</b>, <b>setAll()</b> etc.
         </p>
         <p>Adapter never mutates the store, always returns a new object.</p>
-      </mat-tab>
 
-      <mat-tab label="Selectors">
+        <h3>Selectors</h3>
         <p>selects data from Store</p>
         <p>data must be firstly fetched in order to be able to select them. Selector does not contain any api call</p>
-      </mat-tab>
-      <mat-tab label="Effects">
+
+        <h3>Effects</h3>
+
         <div>An Effect is <b>used to handle side effects</b> in an especially async tasks <b>like API calls</b>.</div>
         <div>After reducer has succeeded and updated the store, the effect is fired with the API call</div>
       </mat-tab>
+
+      <mat-tab label="Ngrx Data">
+        <p>Methods such as <b>getAll()</b> will trigger embedded api call even though we did not specify url. It follows some conventions and tries
+          to reach backend by some convention e.g. api/&#123;lowercasedEntityName&#125; -> api/courses. It is customizable</p>
+      </mat-tab>
+
     </mat-tab-group>
   </div>
 

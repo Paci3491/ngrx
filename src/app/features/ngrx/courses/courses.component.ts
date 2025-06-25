@@ -16,7 +16,6 @@ import {
   MatTableDataSource,
 } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
-import { MatTab, MatTabGroup } from '@angular/material/tabs';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
@@ -36,8 +35,6 @@ import { CourseEditDialogComponent } from './course-edit-dialog/course-edit-dial
     MatHeaderRow,
     MatRow,
     FormsModule,
-    MatTabGroup,
-    MatTab,
     MatIconButton,
     MatIcon,
   ],

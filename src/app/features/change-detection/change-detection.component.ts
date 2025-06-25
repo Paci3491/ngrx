@@ -9,10 +9,11 @@ import { MatButton } from '@angular/material/button';
 import { Subject } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionService } from './change-detection.service';
+import { HomeButtonComponent } from '../../shared/home-button/home-button.component';
 
 @Component({
   selector: 'app-change-detection',
-  imports: [DetectionListComponent, MatButton, AsyncPipe],
+  imports: [DetectionListComponent, MatButton, AsyncPipe, HomeButtonComponent],
   providers: [ChangeDetectionService],
   templateUrl: './change-detection.component.html',
   styleUrl: './change-detection.component.scss',

@@ -1,37 +1,37 @@
+<app-home-button></app-home-button>
 
 <div class="page-wrapper">
 
-  <div class="description-wrapper md-card">
-    <div class="description-left-col">
-      <p>With ChangeDetectionStrategy.OnPush, Angular will only check the component (and its subtree) when one of the following happens:
-      <hr>
-      <ol>
-        <li>An <b>Input() reference changes</b> (i.e., a new object/primitive value).</li>
-        <li>An <b>event is triggered</b> inside the component. (Form input changes (click), (change), (keyup))</li>
-        <li>An <b>Observable emits</b> (if <b>used with async pipe</b> in the template).</li>
-        <li>You <b>manually trigger change</b> detection via ChangeDetectorRef.</li>
-      </ol>
 
-      <button mat-flat-button class="mb-2 w-100" (click)="updateLocalSubject()">Update Local Observable</button>
-      <button mat-flat-button class="mb-2 w-100" (click)="updateServiceSubject()">Update Service Observable</button>
-      <button mat-flat-button class="mb-2 w-100" (click)="updateServiceSubject()">Mutate object</button>
-
-    </div>
-
-    <div class="description-right-col">
-      <app-detection-list>
-
-      </app-detection-list>
-
-      <h4>Greeting async pipe -> {{randomGreeting$ | async}}</h4>
-      <h4>Greeting subscribed -> {{randomGreeting}}</h4>
-      <h4>Greeting service -> {{randomGreetingService}}</h4>
-    </div>
+  <div class="sidebar md-card">
+    <p>With ChangeDetectionStrategy.OnPush, Angular will only check the component (and its subtree) when one of the following happens:
+    <hr>
+    <ol>
+      <li>An <b>Input() reference changes</b> (i.e., a new object/primitive value).</li>
+      <li>An <b>event is triggered</b> inside the component. (Form input changes (click), (change), (keyup))</li>
+      <li>An <b>Observable emits</b> (if <b>used with async pipe</b> in the template).</li>
+      <li>You <b>manually trigger change</b> detection via ChangeDetectorRef.</li>
+    </ol>
   </div>
 
+  <div class="playground  md-card">
+    <app-detection-list>
 
+    </app-detection-list>
 
+    <h4>Greeting async pipe -> {{randomGreeting$ | async}}</h4>
+    <h4>Greeting subscribed -> {{randomGreeting}}</h4>
+    <h4>Greeting service -> {{randomGreetingService}}</h4>
 
-
+    <button mat-flat-button class="mb-2 w-100" (click)="updateLocalSubject()">Update Local Observable</button>
+    <button mat-flat-button class="mb-2 w-100" (click)="updateServiceSubject()">Update Service Observable</button>
+    <button mat-flat-button class="mb-2 w-100" (click)="updateServiceSubject()">Mutate object</button>
+  </div>
 </div>
+
+
+
+
+
+
 
