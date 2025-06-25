@@ -3,21 +3,49 @@
 <div class="page-wrapper">
 
   <div class="md-card sidebar">
-    <mat-tab-group>
+    <mat-tab-group [selectedIndex]="0">
+
+      <mat-tab label="General">
+        NGRX Entity vs. Data
+      </mat-tab>
+
       <mat-tab label="Actions">
         <div>Each action typically has:</div>
         <ul>
           <li>A type - <code>createAction('[Course API] Load Courses Success')</code></li>
-          <li>Optional payload - <pre><code>props<&#123; courses: Course[] &#125;>()</code></pre></li>
+          <li>Optional payload <pre><code>props<&#123; courses: Course[] &#125;>()</code></pre></li>
+          <li>If the action will change the existing data, it is neccessary to wrap it in Update object <pre><code>props<&#123; courses: Update&lt;Course[]&gt; &#125;>()</code></pre>
+          </li>
         </ul>
         <div><b>Reducers listen</b> for them to update state.</div>
-
-
       </mat-tab>
+
       <mat-tab label="Reducers">
-        Zdokumentovat adapter
+        <p>Reducers <b>are always called</b> after the action is dispatched.</p>
+        <p>NgRx Entity Adapter helps manage collections of entities in your store in a <b>normalized</b> and efficient way.</p>
+        <p>Normalizes data into:</p>
+        <ul>
+          <li><code>
+            ids: ['1', '2'],
+            <br>
+            entities: &#123;
+            <br>
+            &nbsp;&nbsp;'1': &#123; id: '1', name: 'Alice' &#125;,
+            <br>
+            &nbsp;&nbsp;'2': &#123; id: '2', name: 'Bob' &#125;
+            <br>&#125;
+          </code></li>
+        </ul>
+        <p>Adapter provides pre-built reducer functions to simplify updates:
+          <b>addOne()</b>, <b>addMany()</b>, <b>updateOne()</b>, <b>removeOne()</b>, <b>removeAll()</b>, <b>setAll()</b> etc.
+        </p>
+        <p>Adapter never mutates the store, always returns a new object.</p>
       </mat-tab>
-      <mat-tab label="Selectors">  </mat-tab>
+
+      <mat-tab label="Selectors">
+        <p>selects data from Store</p>
+        <p>data must be firstly fetched in order to be able to select them. Selector does not contain any api call</p>
+      </mat-tab>
       <mat-tab label="Effects">
         <div>An Effect is <b>used to handle side effects</b> in an especially async tasks <b>like API calls</b>.</div>
         <div>After reducer has succeeded and updated the store, the effect is fired with the API call</div>

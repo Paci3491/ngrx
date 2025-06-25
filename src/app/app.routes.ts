@@ -6,6 +6,11 @@ import { CoursesResolver } from './features/ngrx/courses/courses.resolver';
 import { ChangeDetectionComponent } from './features/change-detection/change-detection.component';
 import { DependencyInjectionComponent } from './features/dependency-injection/dependency-injection.component';
 import { SignalsComponent } from './features/signals/signals.component';
+import { EntityMetadataMap } from '@ngrx/data';
+
+const entityMetadata: EntityMetadataMap = {
+  Course: {},
+};
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
