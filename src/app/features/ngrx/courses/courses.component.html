@@ -1,5 +1,5 @@
-<div class="table-wrapper md-card">
-  <table class="mat-elevation-z8" mat-table [dataSource]="dataSource" >
+<div class="table-wrapper w-100">
+  <table mat-table [dataSource]="dataSource" class="w-100">
 
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -23,6 +23,8 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+
+  <button mat-flat-button (click)="entityServiceUpdate()">Entity update</button>
 </div>
 
 

@@ -3,7 +3,7 @@
 <div class="page-wrapper">
 
   <div class="md-card sidebar">
-    <mat-tab-group [selectedIndex]="0">
+    <mat-tab-group [selectedIndex]="2">
 
       <mat-tab label="General">
         <p>NGRX Entity vs. Data</p>
@@ -49,16 +49,17 @@
         <p>NgRx Entity Adapter helps manage collections of entities in your store in a <b>normalized</b> and efficient way.</p>
         <p>Normalizes data into:</p>
         <ul>
-          <li><code>
-            ids: ['1', '2'],
+          <li>
+            <code>ids: ['1', '2'],</code>
             <br>
-            entities: &#123;
+            <code>entities: &#123;</code>
             <br>
-            &nbsp;&nbsp;'1': &#123; id: '1', name: 'Alice' &#125;,
+            <code>&nbsp;&nbsp;'1': &#123; id: '1', name: 'Alice' &#125;,</code>
             <br>
-            &nbsp;&nbsp;'2': &#123; id: '2', name: 'Bob' &#125;
-            <br>&#125;
-          </code></li>
+            <code>&nbsp;&nbsp;'2': &#123; id: '2', name: 'Bob' &#125;</code>
+            <br>
+            <code>&#125;</code>
+          </li>
         </ul>
         <p>Adapter provides pre-built reducer functions to simplify updates:
           <b>addOne()</b>, <b>addMany()</b>, <b>updateOne()</b>, <b>removeOne()</b>, <b>removeAll()</b>, <b>setAll()</b> etc.
@@ -76,8 +77,22 @@
       </mat-tab>
 
       <mat-tab label="Ngrx Data">
+        <p>Ngrx data service <b>always extends EntityCollectionServiceBase&lt;T&gt;()</b></p>
+        <p>Injects <b>serviceElementsFactory</b> and calls super() with given service and store key</p>
+        <p>In the Redux tool, it can be seen all the actions that are dispatched by the library</p>
         <p>Methods such as <b>getAll()</b> will trigger embedded api call even though we did not specify url. It follows some conventions and tries
-          to reach backend by some convention e.g. api/&#123;lowercasedEntityName&#125; -> api/courses. It is customizable</p>
+          to reach backend by some convention e.g. api/&#123;lowercasedEntityName&#125; -> api/courses.
+        </p>
+        <p>Method <b>getWithQuery()</b> provides us access to query options </p>
+        <p>It is <b>customizable via </b>custom service which extends <b>DefaultDataService</b> and overrides for instance getAll() method</p>
+
+        <h3>Optimistic vs. Pesimistic Store Updates</h3>
+        <div>Can be set in <b>EntityMetadataMap</b> as <b>entityDispatcherOptions</b> object</div>
+        <ul>
+          <li>Optimistic - does not wait for the call to be successful, updates store instantly (e.g. Updates)</li>
+          <li>Pesimistic - waits for the call to be successful and then updates the store (e.g. Creations - id generated at backend)</li>
+        </ul>
+
       </mat-tab>
 
     </mat-tab-group>

@@ -16,10 +16,14 @@ import {
   MatTableDataSource,
 } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
-import { MatIconButton } from '@angular/material/button';
+import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { CourseEditDialogComponent } from './course-edit-dialog/course-edit-dialog.component';
+import { CourseEntityService } from './course-entity.service';
+import { LessonEntityService } from './lesson-entity.service';
+import { Observable } from 'rxjs';
+import { Lesson } from './lesson';
 
 @Component({
   selector: 'app-courses',
@@ -37,6 +41,7 @@ import { CourseEditDialogComponent } from './course-edit-dialog/course-edit-dial
     FormsModule,
     MatIconButton,
     MatIcon,
+    MatButton,
   ],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss',
@@ -44,8 +49,11 @@ import { CourseEditDialogComponent } from './course-edit-dialog/course-edit-dial
 export class CoursesComponent implements OnInit {
   private store = inject(Store<any>);
   private dialog = inject(MatDialog);
+  private coursesEntityService = inject(CourseEntityService);
+  private lessonEntityService = inject(LessonEntityService);
 
   courses: Course[] = [];
+  lessons$: Observable<Lesson[]>;
   dataSource: MatTableDataSource<Course>;
   displayedColumns: string[] = ['id', 'name', 'actions'];
 
@@ -54,6 +62,14 @@ export class CoursesComponent implements OnInit {
       this.courses = data;
       this.dataSource = new MatTableDataSource<Course>(data);
     });
+
+    this.lessonEntityService.getWithQuery({
+      courseId: 2,
+      pageNumber: 2,
+      pageSize: 6,
+    });
+
+    this.lessons$ = this.lessonEntityService.entities$;
   }
 
   openDialog(course: Course) {
@@ -63,6 +79,14 @@ export class CoursesComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  entityServiceUpdate() {
+    this.coursesEntityService.update({
+      id: 2,
+      courseName: 'Madonna Mia',
+      sequenceNumber: 3,
     });
   }
 }

@@ -1,8 +1,17 @@
-
 .sidebar {
   width: 40rem;
 }
 
 h3 {
   color: #005cbb;
+}
+
+table {
+  background: transparent;
+}
+
+li {
+  code {
+    line-height: 28px;
+  }
 }

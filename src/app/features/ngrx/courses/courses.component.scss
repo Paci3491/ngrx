@@ -4,13 +4,9 @@
   }
 }
 
-.table-wrapper {
-  width: 400px;
-  margin-top: 20px;
-}
-
 table {
   background: white;
+  min-height: 15rem;
   mat-icon {
     color: #5a5acd;
   }
