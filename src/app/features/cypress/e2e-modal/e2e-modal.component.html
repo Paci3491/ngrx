@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>This is the dialog</h2>
+
+<mat-dialog-content class="mat-typography">
+
+  <div class="body">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Input</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Textarea</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Select</mat-label>
+      <mat-select id="dialog-select" [(ngModel)]="selectedValue">
+        <mat-option [value]="3">This is option 1</mat-option>
+        <mat-option [value]="3">This is option 2</mat-option>
+        <mat-option [value]="3">This is option 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close id="dialog-cancel-button">Cancel</button>
+  <button mat-raised-button id="dialog-save-button" (click)="onSave()">Save</button>
+</mat-dialog-actions>

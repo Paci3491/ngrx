@@ -1,1 +1,23 @@
-<p>cypress works!</p>
+<app-home-button></app-home-button>
+
+<div class="page-wrapper">
+
+  <div class="sidebar md-card">
+    <p><b>get()</b> vs <b>find()</b></p>
+    <ul>
+      <li><b>get()</b> does <b>not support</b> chaining 2 or more get() functions. It behaves like always starting from the top of the page.</li>
+      <li><b>find()</b> keeps the reference frame. It finds all selectors in what get() returned.</li>
+    </ul>
+    <p><b>click()</b> method clicks in the centre by default. Use <code>force: true</code> to propagate the click as a workaround</p>
+
+
+  </div>
+
+  <div class="playground  md-card">
+    <h2 id="main-title">This is a title to be tested by id</h2>
+    <h3 class="sub-title">This is a subtitle to be tested by class</h3>
+    <hr>
+    <div class="mb-4">Modal output: {{modalOutput}}</div>
+    <button id="dialog-button" mat-flat-button (click)="openDialog()">Open modal</button>
+  </div>
+</div>

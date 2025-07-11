@@ -6,6 +6,7 @@ import { CoursesResolver } from './features/ngrx/courses/courses.resolver';
 import { ChangeDetectionComponent } from './features/change-detection/change-detection.component';
 import { DependencyInjectionComponent } from './features/dependency-injection/dependency-injection.component';
 import { SignalsComponent } from './features/signals/signals.component';
+import { CypressComponent } from './features/cypress/cypress.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -31,5 +32,10 @@ export const routes: Routes = [
     component: NgrxComponent,
     title: 'Ngrx',
     resolve: { courses: CoursesResolver },
+  },
+  {
+    path: 'cypress',
+    component: CypressComponent,
+    title: 'Cypress',
   },
 ];
