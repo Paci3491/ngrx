@@ -18,10 +18,8 @@ import {
   RouterState,
 } from '@ngrx/router-store';
 import { coursesReducer } from './features/ngrx/courses/course.reducers';
-import { EntityMetadataMap, provideEntityData } from '@ngrx/data';
+import { EntityMetadataMap } from '@ngrx/data';
 import { compareLessons } from './features/ngrx/courses/lesson';
-import { LessonEntityService } from './features/ngrx/courses/lesson-entity.service';
-import { CourseEntityService } from './features/ngrx/courses/course-entity.service';
 
 const entityMetadata: EntityMetadataMap = {
   Course: {},
@@ -36,12 +34,12 @@ export const entityConfig = {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    LessonEntityService,
-    CourseEntityService,
+    // LessonEntityService,
+    // CourseEntityService,
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimationsAsync(),
-    provideEntityData(entityConfig), // comment if entity ngrx
+    // provideEntityData(entityConfig), // comment if entity ngrx
     provideEffects([AuthEffects]),
     provideStore(
       {

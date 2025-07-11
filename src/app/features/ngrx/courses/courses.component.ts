@@ -20,8 +20,6 @@ import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { CourseEditDialogComponent } from './course-edit-dialog/course-edit-dialog.component';
-import { CourseEntityService } from './course-entity.service';
-import { LessonEntityService } from './lesson-entity.service';
 import { Observable } from 'rxjs';
 import { Lesson } from './lesson';
 
@@ -49,8 +47,8 @@ import { Lesson } from './lesson';
 export class CoursesComponent implements OnInit {
   private store = inject(Store<any>);
   private dialog = inject(MatDialog);
-  private coursesEntityService = inject(CourseEntityService);
-  private lessonEntityService = inject(LessonEntityService);
+  // private coursesEntityService = inject(CourseEntityService);
+  // private lessonEntityService = inject(LessonEntityService);
 
   courses: Course[] = [];
   lessons$: Observable<Lesson[]>;
@@ -63,13 +61,13 @@ export class CoursesComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Course>(data);
     });
 
-    this.lessonEntityService.getWithQuery({
-      courseId: 2,
-      pageNumber: 2,
-      pageSize: 6,
-    });
-
-    this.lessons$ = this.lessonEntityService.entities$;
+    // this.lessonEntityService.getWithQuery({
+    //   courseId: 2,
+    //   pageNumber: 2,
+    //   pageSize: 6,
+    // });
+    //
+    // this.lessons$ = this.lessonEntityService.entities$;
   }
 
   openDialog(course: Course) {
@@ -83,10 +81,10 @@ export class CoursesComponent implements OnInit {
   }
 
   entityServiceUpdate() {
-    this.coursesEntityService.update({
-      id: 2,
-      courseName: 'Madonna Mia',
-      sequenceNumber: 3,
-    });
+    // this.coursesEntityService.update({
+    //   id: 2,
+    //   courseName: 'Madonna Mia',
+    //   sequenceNumber: 3,
+    // });
   }
 }
