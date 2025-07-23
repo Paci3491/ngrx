@@ -1,5 +1,6 @@
 describe('Dialog functionality', () => {
   beforeEach(() => {
+    cy.viewport(1980, 1000); // Set viewport to 550px x 750px
     cy.visit('http://localhost:4200/cypress');
   });
 

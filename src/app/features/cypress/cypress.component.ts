@@ -3,10 +3,11 @@ import { HomeButtonComponent } from '../../shared/home-button/home-button.compon
 import { MatDialog } from '@angular/material/dialog';
 import { E2eModalComponent } from './e2e-modal/e2e-modal.component';
 import { MatButton } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cypress',
-  imports: [HomeButtonComponent, MatButton],
+  imports: [HomeButtonComponent, MatButton, RouterLink],
   templateUrl: './cypress.component.html',
   styleUrl: './cypress.component.scss',
 })

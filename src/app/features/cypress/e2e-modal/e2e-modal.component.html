@@ -5,12 +5,12 @@
   <div class="body">
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Input</mat-label>
-      <input matInput>
+      <input matInput (keydown.enter)="onSave()">
     </mat-form-field>
 
     <mat-form-field class="w-100" appearance="outline">
       <mat-label>Textarea</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput (keydown.enter)="onSave()"></textarea>
     </mat-form-field>
 
     <mat-form-field class="w-100" appearance="outline">
