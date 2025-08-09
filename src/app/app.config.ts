@@ -20,6 +20,7 @@ import {
 import { coursesReducer } from './features/ngrx/courses/course.reducers';
 import { EntityMetadataMap } from '@ngrx/data';
 import { compareLessons } from './features/ngrx/courses/lesson';
+import { provideHttpClient } from '@angular/common/http';
 
 const entityMetadata: EntityMetadataMap = {
   Course: {},
@@ -41,6 +42,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     // provideEntityData(entityConfig), // comment if entity ngrx
     provideEffects([AuthEffects]),
+    provideHttpClient(),
     provideStore(
       {
         auth: authReducer,

@@ -14,6 +14,9 @@
     <p><b>.then((el) => &#123;&#125;)</b> provides function where specially wrapped element comes into play. This way, it can be checked whether
       the element has attributes or classes
     </p>
+    <p><b>should()</b> passes the value automatically to <b>and()</b> which is basically an alias for should()</p>
+
+    <h3>Custom commands & queries & tasks</h3>
 
   </div>
 
@@ -29,6 +32,19 @@
       &nbsp;&nbsp;&nbsp;
       <a routerLink="/signals" data-cy="signals-link">This is a router link to signals</a>
     </div>
+    <br>
+    <br>
+
+    <h3>Fetch Data</h3>
+
+    @if (dummyData) {
+      <p>{{ dummyData.title }}</p>
+    } @else {
+      <p> No dummy data fetched </p>
+    }
+    <button class="w-100 mb-4" mat-flat-button (click)="fetchData()">Fetch data</button>
+
   </div>
+
 
 </div>

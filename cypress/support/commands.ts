@@ -35,3 +35,20 @@
 //     }
 //   }
 // }
+
+// CUSTOM COMMANDS
+Cypress.Commands.add('closeDialog', () => {
+  cy.get('button#dialog-cancel-button').click();
+});
+
+Cypress.Commands.add('openDialog', () => {
+  cy.get('button#dialog-button').click();
+});
+
+// CUSTOM QUERIES
+Cypress.Commands.addQuery('getById', (id) => {
+  const getFn = cy.now('get', `[data-cy="${id}"]`); // This must be here
+  return () => {
+    return getFn();
+  };
+});

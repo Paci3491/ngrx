@@ -1,7 +1,7 @@
 describe('Dialog functionality', () => {
   beforeEach(() => {
-    cy.viewport(1980, 1000); // Set viewport to 550px x 750px
-    cy.visit('http://localhost:4200/cypress');
+    cy.viewport(1980, 1000);
+    cy.visit('/cypress');
   });
 
   it('should open and close the dialog by clicking backdrop', () => {

@@ -1,6 +1,6 @@
 describe('Test the Basics', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:4200/cypress');
+    cy.visit('/cypress');
   });
 
   it('should render the main and sub Title', () => {
