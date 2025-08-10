@@ -12,12 +12,19 @@
     <p>alias can be used by using <b>.as()</b> method. It needs to be then referenced via <b>.get("&#64;my-name")</b></p>
     <p>recommended way how to reference html elements is via <br> <b>[data-cy=*]</b></p>
     <p><b>.then((el) => &#123;&#125;)</b> provides function where specially wrapped element comes into play. This way, it can be checked whether
-      the element has attributes or classes
+      the element has attributes or classes. The <b>syntax</b> for assertions <b>in callbacks</b> is with <b>expect()</b> instead of regular should()
     </p>
     <p><b>should()</b> passes the value automatically to <b>and()</b> which is basically an alias for should()</p>
 
-    <h3>Custom commands & queries & tasks</h3>
+    <p>Custom queries and commands can be created by Cypress.Commands class using <b>add()</b> or <b>addQuery()</b></p>
 
+    <h3>Interceptors & Fake Requests</h3>
+    <p><b>wait()</b> can be used only with interceptor alias. Also yields data to console about spied object</p>
+    <p><b>intercept()</b> mocks whole http call. <br><code>Params: 'Method', 'URL', 'mocked object'</code> </p>
+    <p><b>request()</b> sends a fake call to API. With <b>.then()</b>, the response data can be tested </p>
+    <hr>
+    <p><b>its()</b> refers of a value of its ancestor</p>
+    <code>cy.getCookie().its('value').should(...)</code>
   </div>
 
   <div class="playground  md-card">
@@ -38,13 +45,11 @@
     <h3>Fetch Data</h3>
 
     @if (dummyData) {
-      <p>{{ dummyData.title }}</p>
+      <p data-cy="dummy-data-content">{{ dummyData.title }}</p>
     } @else {
       <p> No dummy data fetched </p>
     }
-    <button class="w-100 mb-4" mat-flat-button (click)="fetchData()">Fetch data</button>
+    <button class="w-100 mb-4" mat-flat-button (click)="fetchData()" data-cy="fetch-data-button">Fetch data</button>
 
   </div>
-
-
 </div>
